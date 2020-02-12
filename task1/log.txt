@@ -1,0 +1,11 @@
+commit 7b8a48f4eb36ff50858cb860c1023617b7fa1594
+Author: yushagun <yushagun@gmail.com>
+Date:   Wed Feb 12 00:29:00 2020 +0300
+
+    add status.txt
+
+commit b256f1340bc24fc0bde8c7885aa0db8ce5fd6ef0
+Author: yushagun <yushagun@gmail.com>
+Date:   Wed Feb 12 00:25:23 2020 +0300
+
+    add .gitignore
