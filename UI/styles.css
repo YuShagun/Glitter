@@ -1,29 +1,29 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
-.fl-r {
+.float-r {
     float: right;
 }
-.d-b {
+.display-b {
     display: block;
 }
-.d-ib {
+.display-ib {
     display: inline-block;
 }
-.d-f {
+.display-f {
     display: flex;
 }
-.p-al {
+.pname-al {
     position: absolute;
     top: 5px;
 }
-.ac-c {
+.uinf-al {
     justify-content: left;
     align-items: center;
 }
 .uinf-m {
     margin-left: 10px;
 }
-.pn-m {
+.pname-m {
     margin: 0 0 20px 10px;
 }
 body {
@@ -48,21 +48,42 @@ header {
     margin: 7px 2px 8px 38px;
     float: left;
 }
-@media screen and (max-width: 550px){
-   .uimg {
-       display: none;
-   }
+@media screen and (max-width: 530px){
+    .uimg {
+        display: none;
+    }
+    #logo {
+        font-size: 26px;
+        margin-top: 10px;
+    }
+    .signin {
+        font-size: 20px;
+        width: 110px;
+    }
+    #myname {
+        font-size: 20px;
+        margin-top: 14px;
+    }
+    #load {
+        margin: 10px 0;
+    }
 }
-
+@media screen and (min-width: 531px){
+    .signin {
+        font-size: 22px;
+        width: 140px;
+    }
+    #load {
+        margin: 10px 10px 30px 0;
+    }
+}
 .signin {
-    font-size: 22px;
     text-align: center;
     color: white;
     background-color: #4F4FD9;
     border: none;
     float: right;
     height: 52px;
-    width: 140px;
     margin-right: 20px;
 }
 #myname {
@@ -81,32 +102,38 @@ header {
     margin: 3px 10px 3px 0;
 }
 #main {
+    box-sizing: border-box;
     flex-wrap: wrap;
     width: 80%;
-    min-width: 350px;
+    min-width: 310px;
     height: 100%;
     margin: auto;
-}
-@media screen and (max-width: 580px) {
-    #main {
-        margin-left: 20px;
-    }
 }
 @media screen and (max-width: 829px) {
     .filter {
         width: 420px;
+        margin-right: 0;
     }
     .feed {
-        width: 420px;
+        max-width: 420px;
+        margin-right: 0;
     }
     .rcol {
         order: 2;
         margin-left: 0;
         margin-bottom: 10px;
-        width: 500px;
+        width: 100%;
     }
     .adp {
-        width: 420px;
+        width: inherit;
+        max-width: 420px;
+    }
+    #main {
+        width: 95%;
+    }
+    footer {
+        font-size: 10px;
+        padding: 14px 0;
     }
 }
 @media screen and (min-width: 830px) {
@@ -114,11 +141,13 @@ header {
         width: 40%;
         min-width: 250px;
         max-width: 420px;
+        margin-right: 20px;
     }
     .feed {
         min-width: 300px;
         width: 90%;
         max-width: 90%;
+        margin-right: 10px;
     }
     #main {
         flex-wrap: nowrap;
@@ -130,6 +159,10 @@ header {
     }
     .adp {
         min-width: 100px;
+    }
+    footer {
+        font-size: 12px;
+        padding: 17px 0;
     }
 }
 @media screen and (max-width: 1100px){
@@ -161,7 +194,6 @@ header {
     order: 1;
     font-family: 'Roboto', sans-serif;
     padding: 10px 0;
-    margin-right: 20px;
     margin-bottom: 20px;
     border: solid 2px #4F4FD9;
     height: max-content;
@@ -258,13 +290,12 @@ input {
     display: inline;
     float: left;
     margin-bottom: 10px;
-    margin-right: 10px;
     font-family: 'Roboto', sans-serif;
 }
 .post {
     box-sizing: border-box;
     width: 100%;
-    min-width: 300px;
+    min-width: 290px;
     border: solid #8C8C8C 2px;
     border-radius: 5px;
     margin: 0 10px 20px 0;
@@ -278,6 +309,7 @@ input {
     top: 10px;
 }
 .pimg {
+    max-width: 50px;
 }
 .uname {
     display: inline;
@@ -296,7 +328,8 @@ input {
     display: block;
     max-height: 300px;
     max-width: 300px;
-    margin: 5px;
+    width: inherit;
+    margin: 5px 0;
 }
 .ptext {
     font-family: 'Roboto', sans-serif;
@@ -350,7 +383,6 @@ input {
     width: 100%;
     min-width: 300px;
     border: none;
-    margin: 10px 10px 30px 0;
     background-color: #7373D9;
     font-family: 'Roboto', sans-serif;
     text-align: center;
@@ -359,7 +391,7 @@ input {
     height: 50px;
 }
 .rcol {
-    width: fit-content;
+    min-width: fit-content;
 }
 .uinf {
     box-sizing: border-box;
@@ -368,6 +400,8 @@ input {
     font-size: 16px;
     padding: 5px 10px;
     min-width: 300px;
+    max-width: 420px;
+    width: 100%;
     margin-bottom: 10px;
 }
 .adp {
@@ -381,12 +415,10 @@ input {
 footer{
     width: 100%;
     max-height: 52px;
-    min-width: 500px;
+    min-width: 300px;
     bottom: 0;
     background-color: #FFDC73;
     font-family: Arial, sans-serif;
-    font-size: 12px;
     text-align: center;
-    padding: 17px 0;
     margin-top: 2px;
 }
