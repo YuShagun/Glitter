@@ -27,7 +27,7 @@
     margin: 0 0 20px 10px;
 }
 body {
-    margin: 0 0 0 0;
+    margin: 0;
     align-content: center;
     height: 100%;
     width: 100%;
@@ -53,16 +53,21 @@ header {
         display: none;
     }
     #logo {
-        font-size: 26px;
-        margin-top: 10px;
+        font-size: 22px;
+        margin-top: 12px;
+        margin-left: 15px;
     }
     .signin {
-        font-size: 20px;
-        width: 110px;
+        font-size: 18px;
+        width: 80px;
+        height: 40px;
+        margin-top: 6px;
+        margin-right: 15px;
     }
     #myname {
         font-size: 20px;
         margin-top: 14px;
+        margin-right: 16px;
     }
     #load {
         margin: 10px 0;
@@ -72,9 +77,16 @@ header {
     .signin {
         font-size: 22px;
         width: 140px;
+        height: 52px;
+        margin-right: 20px;
     }
     #load {
         margin: 10px 10px 30px 0;
+    }
+    #myname {
+        font-size: 24px;
+        margin-top: 12px;
+        margin-right: 20px;
     }
 }
 .signin {
@@ -83,16 +95,13 @@ header {
     background-color: #4F4FD9;
     border: none;
     float: right;
-    height: 52px;
-    margin-right: 20px;
 }
 #myname {
     font-family: 'Roboto', sans-serif;
-    font-size: 24px;
     color: white;
     text-align: left;
     float: right;
-    margin: 12px 20px 11px 10px;
+    margin-left: 10px;
 }
 .uimg {
     height: 100%;
@@ -212,7 +221,7 @@ header {
     font-size: 22px;
     margin: 10px 0;
 }
-#author {
+#author, #date {
     font-family: 'Roboto', sans-serif;
     text-align: left;
     border-radius: 5px;
@@ -221,15 +230,7 @@ header {
     width: 100%;
     max-width: 75%;
 }
-#date {
-    font-family: 'Roboto', sans-serif;
-    text-align: left;
-    border-radius: 5px;
-    border-style: solid;
-    border-color: #8C8C8C;
-    width: 100%;
-    max-width: 75%;
-}
+
 label {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
@@ -297,7 +298,7 @@ input {
     width: 100%;
     min-width: 290px;
     border: solid #8C8C8C 2px;
-    border-radius: 5px;
+    border-radius: 10px;
     margin: 0 10px 20px 0;
     padding: 0 10px;
     font-family: 'Roboto', sans-serif;
@@ -310,6 +311,7 @@ input {
 }
 .pimg {
     max-width: 50px;
+    border-radius: 80px;
 }
 .uname {
     display: inline;
