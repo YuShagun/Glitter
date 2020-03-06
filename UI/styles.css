@@ -194,7 +194,7 @@ header {
         min-width: 300px;
     }
 }
-@media screen and (max-width: 1300px){
+@media screen and (max-width: 1500px){
     #main {
         width: 95%;
     }
@@ -210,20 +210,16 @@ header {
 .input {
     width: 80%;
     height: 95%;
-    font-family: 'Roboto', sans-serif;
     margin: auto;
     border: none;
     padding: 2.5% 10%;
 }
 .elname {
-    font-family: 'Roboto', sans-serif;
     text-align: center;
     font-size: 22px;
     margin: 10px 0;
 }
 #author, #date {
-    font-family: 'Roboto', sans-serif;
-    text-align: left;
     border-radius: 5px;
     border-style: solid;
     border-color: #8C8C8C;
@@ -232,13 +228,11 @@ header {
 }
 
 label {
-    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     text-align: left;
     margin: 5px 0;
 }
 input {
-    font-family: 'Roboto', sans-serif;
     text-align: left;
     margin: 5px 0;
 }
@@ -258,7 +252,6 @@ input {
     border-style: solid;
     border-color: #8C8C8C;
     border-radius: 5px;
-    font-family: 'Roboto', sans-serif;
     text-align: center;
     font-size: 12px;
     padding: 0 3px;
@@ -296,12 +289,11 @@ input {
 .post {
     box-sizing: border-box;
     width: 100%;
-    min-width: 290px;
+    min-width: 300px;
     border: solid #8C8C8C 2px;
     border-radius: 10px;
     margin: 0 10px 20px 0;
     padding: 0 10px;
-    font-family: 'Roboto', sans-serif;
     font-size: 16px;
 
 }
@@ -315,15 +307,12 @@ input {
 }
 .uname {
     display: inline;
-    font-family: 'Roboto', sans-serif;
     font-size: 22px;
     text-align: left;
 }
 .date {
-    font-family: 'Roboto', sans-serif;
     color: #4D4D4D;
     text-align: left;
-    font-size: 16px;
     margin: 12px 10px;
 }
 .att {
@@ -333,18 +322,7 @@ input {
     width: inherit;
     margin: 5px 0;
 }
-.ptext {
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-    text-align: left;
-    float: left;
-    position: relative;
-    top: 66px!important;
-    left: 10px;
-}
 .text {
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
     text-align: left;
     margin: 5px;
 }
