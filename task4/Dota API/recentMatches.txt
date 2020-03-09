@@ -1,0 +1,19 @@
+Player's recent matches
+For every match:
+Assist count (16)
+Death count (3)
+Duration in seconds (17401)
+Game mode index (22)
+Gold per minute (448)
+Damage dealt to other heroes (17401)
+Healing dealt by a hero (0)
+Hero id (99)
+Kills count (2)
+Last hit count (89)
+Lobby type index (7)
+Match id
+Did radiant won (True)
+Skill (1)
+Damage dealt to towers (4328)
+Start time
+Experience per minute (464)

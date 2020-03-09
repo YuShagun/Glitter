@@ -1,0 +1,2 @@
+Returns location info and forecast history on a particular day
+Minsk, today
