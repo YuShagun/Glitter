@@ -114,13 +114,15 @@ header {
     box-sizing: border-box;
     flex-wrap: wrap;
     width: 80%;
-    min-width: 310px;
+    min-width: 300px;
     height: 100%;
     margin: auto;
+    padding: 0 10px;
 }
 @media screen and (max-width: 829px) {
     .filter {
-        width: 420px;
+        width: 100%;
+        max-width: 420px;
         margin-right: 0;
     }
     .feed {
@@ -138,7 +140,8 @@ header {
         max-width: 420px;
     }
     #main {
-        width: 95%;
+        width: fit-content;
+        flex-direction: column;
     }
     footer {
         font-size: 10px;
@@ -159,6 +162,7 @@ header {
         margin-right: 10px;
     }
     #main {
+        width: 95%;
         flex-wrap: nowrap;
     }
     .rcol {
@@ -194,12 +198,8 @@ header {
         min-width: 300px;
     }
 }
-@media screen and (max-width: 1500px){
-    #main {
-        width: 95%;
-    }
-}
 .filter {
+    box-sizing: border-box;
     order: 1;
     font-family: 'Roboto', sans-serif;
     padding: 10px 0;
@@ -257,7 +257,7 @@ input {
     padding: 0 3px;
     margin: 5px 5px 3px 0;
 }
-#tags {
+.tags {
     flex-wrap: wrap;
     margin: 3px;
 }
@@ -292,7 +292,7 @@ input {
     min-width: 300px;
     border: solid #8C8C8C 2px;
     border-radius: 10px;
-    margin: 0 10px 20px 0;
+    margin-bottom: 20px;
     padding: 0 10px;
     font-size: 16px;
 
