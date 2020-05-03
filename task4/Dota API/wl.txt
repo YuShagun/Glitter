@@ -1,0 +1,4 @@
+Win/loss count by palyer
+Patch: 6.83
+Game mode: Single Draft
+Team: radiant

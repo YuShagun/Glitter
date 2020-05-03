@@ -1,0 +1,2 @@
+Returns location information and a 5 day forecast
+44418 - London

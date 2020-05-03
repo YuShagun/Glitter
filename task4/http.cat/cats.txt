@@ -1,0 +1,1 @@
+Returns an image with response code and text message
