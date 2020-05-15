@@ -324,6 +324,42 @@
         return true;
     }
 
+    function addLike(id, user) {
+        if(typeof(id) !== "string" || typeof(user) !== "string")
+            return false;
+
+        let post = getPost(id);
+
+        if(typeof(post) === "undefined")
+            return false;
+
+        if(post.likes.includes(user))
+            return false;
+
+        post.likes.push(user);
+
+        return true;
+    }
+
+    function removeLike(id, user) {
+        if(typeof(id) !== "string" || typeof(user) !== "string")
+            return false;
+
+        let post = getPost(id);
+
+        if(typeof(post) === "undefined")
+            return false;
+
+        let ind = post.likes.indexOf(user);
+
+        if(ind === -1)
+            return false;
+
+        post.likes.splice(ind, 1);
+
+        return true;
+    }
+
     function testEverything() {
         testArray();
         testGettingMany();
@@ -332,6 +368,8 @@
         testAdding();
         testEditing();
         testRemoving();
+        testLiking();
+        testUnLiking();
     }
 
     function testArray() {
@@ -374,7 +412,7 @@
         console.log('\nTest getPost()\n\n');
         console.log('getPost(\'5\')');
         console.log(getPost('5'));
-        console.log('getPost(\'5\')');
+        console.log('getPost(5)');
         console.log(getPost(5));
         console.log('getPost(\'30\')');
         console.log(getPost('30'));
@@ -668,6 +706,38 @@
         console.log(removePost('25'));
         console.log(`getPost('25');`);
         console.log(getPost('25'));
+    }
+
+    function testLiking() {
+        console.log('\nTest addLike()\n\n');
+        console.log('getPost(\'5\')');
+        console.log(getPost('5'));
+
+        console.log(`\n'addLike('5', "NewUser")'\n\n`);
+        console.log(addLike('5', "NewUser"));
+        console.log(getPost('5').likes);
+
+        console.log(`\n'addLike('5', "User_1")'\n\n`);
+        console.log(addLike('5', "User_1"));
+        console.log(getPost('5').likes);
+    }
+
+    function testUnLiking() {
+        console.log('\nTest removeLike()\n\n');
+        console.log('getPost(\'5\')');
+        console.log(getPost('5'));
+
+        console.log(`\n'removeLike('5', "False_User")'\n\n`);
+        console.log(removeLike('5', "False_User"));
+        console.log(getPost('5').likes);
+
+        console.log(`\n'removeLike('5', "NewUser")'\n\n`);
+        console.log(removeLike('5', "NewUser"));
+        console.log(getPost('5').likes);
+
+        console.log(`\n'removeLike('5', "NewUser")'\n\n`);
+        console.log(removeLike('5', "NewUser"));
+        console.log(getPost('5').likes);
     }
 
     testEverything();
