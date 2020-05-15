@@ -177,10 +177,30 @@
     class PostCollection {
         _posts = [];
 
-        constructor(_posts) {
-            if (typeof (_posts) !== "object")
+        constructor(posts) {
+            if (!Array.isArray(posts))
                 return;
-            this._posts = _posts.slice();
+            this._posts = posts.slice();
+        }
+
+        addAll(posts) {
+            if (!Array.isArray(posts))
+                return;
+
+            let res = [];
+
+            for (let post of posts){
+                if(PostCollection.validate(post) && typeof(this.get(post.id)) == "undefined")
+                    this._posts.push(post);
+                else
+                    res.push(post);
+            }
+
+            return res;
+        }
+
+        clear(){
+            this._posts.splice(0, this._posts.length);
         }
 
         getPage(skip = 0, top = 10, filterConfig) {
@@ -361,9 +381,11 @@
             this._testGettingSingle();
             this._testValidation();
             this._testAdding();
+            this._testAddingMany();
             this._testEditing();
             this._testRemoving();
             this._testLiking();
+            this._testCleaning();
         }
 
         _testGettingMany() {
@@ -647,6 +669,100 @@
             ));
         }
 
+        _testAddingMany(){
+            console.log('\nTest addAll()\n\n');
+            console.log(this._posts);
+            console.log(`addAll([
+                {
+                    id: '21',
+                    description: 'Микрочип, производимый на некотором заводе, имеет форму плоского квадрата со стороной a микрометров.',
+                    createdAt: new Date('2020-01-19T13:24:00'),
+                    author: 'User_1',
+                    likes: ['Task', 'User_1', 'author', 'User_3'],
+                    hashTags: ['tag_1', 'tag_2', 'tag_3', 'tag_4', 'tag_5'],
+                },
+                {
+                    id: '2',
+                    description: 'На нижнюю грань выведены контакты, причем координаты этих контактов в системе координат, в которой оси параллельны сторонам чипа, а единичный отрезок имеет длину 1 мкм, являются целыми числами.',
+                    createdAt: new Date('2020-01-19T13:27:00'),
+                    author: 'User_1',
+                    likes: ['User_1', 'author', 'User_3'],
+                    hashTags: ['tag_1', 'tag_2', 'tag_4', 'tag_5'],
+                },
+                {
+                    id: '23',
+                    description: 'Для успешной распайки необходимо от каждого контакта протянуть проводящую дорожку к одной из сторон чипа для последующего закрепления на ноге интегральной схемы.',
+                    createdAt: new Date('2020-01-19T13:30:00'),
+                    author: 'User_1',
+                    likes: ['Task', 'User_1', 'User_3'],
+                    hashTags: ['tag_1', 'tag_3'],
+                },
+                {
+                    id: '24',
+                    description: 'Однако используемый технологический процесс позволяет создавать только прямые дорожки, идущие от контакта к краю чипа без изгибов и параллельные сторонам кристалла,',
+                    createdAt: new Date('2020-01-19T13:35:00'),
+                    author: 'Task',
+                    photoLink: 'https://sun1.beltelecom-by-minsk.userapi.com/Uv7oJSk0ePo7QMQQZgWN1al2w0hF9FqcL5d11Q/MSdYzJobMBk.jpg',
+                    likes: [],
+                    hashTags: ['tag_1'],
+                },
+                {
+                    id: '25',
+                    description: 'причем невозможно проложить одну дорожку под или над другой.',
+                    createdAt: new Date('2020-01-19T13:36:00'),
+                    author: '',
+                    photoLink: 'https://sun1.beltelecom-by-minsk.userapi.com/Uv7oJSk0ePo7QMQQZgWN1al2w0hF9FqcL5d11Q/MSdYzJobMBk.jpg',
+                    likes: ['Task', 'User_1', 'author', 'User_3'],
+                    hashTags: [],
+                },
+            ])`);
+            console.log(this.addAll([
+                {
+                    id: '21',
+                    description: 'Микрочип, производимый на некотором заводе, имеет форму плоского квадрата со стороной a микрометров.',
+                    createdAt: new Date('2020-01-19T13:24:00'),
+                    author: 'User_1',
+                    likes: ['Task', 'User_1', 'author', 'User_3'],
+                    hashTags: ['tag_1', 'tag_2', 'tag_3', 'tag_4', 'tag_5'],
+                },
+                {
+                    id: '2',
+                    description: 'На нижнюю грань выведены контакты, причем координаты этих контактов в системе координат, в которой оси параллельны сторонам чипа, а единичный отрезок имеет длину 1 мкм, являются целыми числами.',
+                    createdAt: new Date('2020-01-19T13:27:00'),
+                    author: 'User_1',
+                    likes: ['User_1', 'author', 'User_3'],
+                    hashTags: ['tag_1', 'tag_2', 'tag_4', 'tag_5'],
+                },
+                {
+                    id: '23',
+                    description: 'Для успешной распайки необходимо от каждого контакта протянуть проводящую дорожку к одной из сторон чипа для последующего закрепления на ноге интегральной схемы.',
+                    createdAt: new Date('2020-01-19T13:30:00'),
+                    author: 'User_1',
+                    likes: ['Task', 'User_1', 'User_3'],
+                    hashTags: ['tag_1', 'tag_3'],
+                },
+                {
+                    id: '24',
+                    description: 'Однако используемый технологический процесс позволяет создавать только прямые дорожки, идущие от контакта к краю чипа без изгибов и параллельные сторонам кристалла,',
+                    createdAt: new Date('2020-01-19T13:35:00'),
+                    author: 'Task',
+                    photoLink: 'https://sun1.beltelecom-by-minsk.userapi.com/Uv7oJSk0ePo7QMQQZgWN1al2w0hF9FqcL5d11Q/MSdYzJobMBk.jpg',
+                    likes: [],
+                    hashTags: ['tag_1'],
+                },
+                {
+                    id: '25',
+                    description: 'причем невозможно проложить одну дорожку под или над другой.',
+                    createdAt: new Date('2020-01-19T13:36:00'),
+                    author: '',
+                    photoLink: 'https://sun1.beltelecom-by-minsk.userapi.com/Uv7oJSk0ePo7QMQQZgWN1al2w0hF9FqcL5d11Q/MSdYzJobMBk.jpg',
+                    likes: ['Task', 'User_1', 'author', 'User_3'],
+                    hashTags: [],
+                },
+            ]));
+            console.log(this._posts);
+        }
+
         _testEditing() {
             console.log('\nTest edit()\n\n');
 
@@ -758,6 +874,14 @@
             console.log(`\n'toggleLike('5', "NewUser")'\n\n`);
             console.log(this.toggleLike('5', "NewUser"));
             console.log(this.get('5').likes);
+        }
+
+        _testCleaning(){
+            console.log('\nTest clear()\n\n');
+            console.log(this._posts);
+            console.log(`clear()`);
+            this.clear();
+            console.log(this._posts);
         }
     }
 
