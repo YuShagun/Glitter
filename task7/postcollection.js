@@ -337,24 +337,7 @@
             return true;
         }
 
-        addLike(id, user) {
-            if(typeof(id) !== "string" || typeof(user) !== "string")
-                return false;
-
-            let post = this.get(id);
-
-            if(typeof(post) === "undefined")
-                return false;
-
-            if(post.likes.includes(user))
-                return false;
-
-            post.likes.push(user);
-
-            return true;
-        }
-
-        removeLike(id, user) {
+        toggleLike(id, user) {
             if(typeof(id) !== "string" || typeof(user) !== "string")
                 return false;
 
@@ -366,9 +349,9 @@
             let ind = post.likes.indexOf(user);
 
             if(ind === -1)
-                return false;
-
-            post.likes.splice(ind, 1);
+                post.likes.push(user);
+            else
+                post.likes.splice(ind, 1);
 
             return true;
         }
@@ -381,7 +364,6 @@
             this._testEditing();
             this._testRemoving();
             this._testLiking();
-            this._testUnLiking();
         }
 
         _testGettingMany() {
@@ -769,30 +751,12 @@
             console.log('getPost(\'5\')');
             console.log(this.get('5'));
 
-            console.log(`\n'addLike('5', "NewUser")'\n\n`);
-            console.log(this.addLike('5', "NewUser"));
+            console.log(`\n'toggleLike('5', "NewUser")'\n\n`);
+            console.log(this.toggleLike('5', "NewUser"));
             console.log(this.get('5').likes);
 
-            console.log(`\n'addLike('5', "User_1")'\n\n`);
-            console.log(this.addLike('5', "User_1"));
-            console.log(this.get('5').likes);
-        }
-
-        _testUnLiking() {
-            console.log('\nTest removeLike()\n\n');
-            console.log('getPost(\'5\')');
-            console.log(this.get('5'));
-
-            console.log(`\n'removeLike('5', "False_User")'\n\n`);
-            console.log(this.removeLike('5', "False_User"));
-            console.log(this.get('5').likes);
-
-            console.log(`\n'removeLike('5', "NewUser")'\n\n`);
-            console.log(this.removeLike('5', "NewUser"));
-            console.log(this.get('5').likes);
-
-            console.log(`\n'removeLike('5', "NewUser")'\n\n`);
-            console.log(this.removeLike('5', "NewUser"));
+            console.log(`\n'toggleLike('5', "NewUser")'\n\n`);
+            console.log(this.toggleLike('5', "NewUser"));
             console.log(this.get('5').likes);
         }
     }
