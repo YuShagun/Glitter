@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Glitter</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="view.js"></script>
+    <!-- <script type="module" src="https://kit.fontawesome.com/94b389b029.js" crossorigin="anonymous"></script> -->
+    <script type="module" src="https://kit.fontawesome.com/94b389b029.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+    <span id="logo">GLITTER</span>
+    <img class="uimg float-r"
+         src="https://sun2.beltelecom-by-minsk.userapi.com/tdox4ja3dZ6yy7jiqYAyHKSxersAIPECgDxLdA/_159FeFEhBs.jpg"
+         alt="Your image">
+</header>
+<div class="display-f" id="main">
+    <div class="col">
+        <form class="filter" id="fl">
+            <fieldset class="input">
+                <legend class="elname">Filter posts</legend>
+                <label for="author">Author</label><br>
+                <input type="text" id="author" name="author"><br>
+                <label for="date">Date</label><br>
+                <input type="date" id="date" name="author"><br>
+                <label for="tf">Tags</label><br>
+                <div class="display-f tags">
+                    <span class="tag">tag1</span>
+                    <span class="tag">joke</span>
+                    <span class="tag">looooong tag</span>
+                    <span class="tag">some</span>
+                    <span class="tag">tags</span>
+                    <span class="tag">to make</span>
+                    <span class="tag">many</span>
+                    <span class="tag">lines</span>
+                    <span class="tag">and</span>
+                    <span class="tag">more</span>
+                </div>
+                <button id="add">Add tag</button>
+                <input type="text" id="tf">
+                <button class="display-b" id="apply">Apply</button>
+            </fieldset>
+        </form>
+        <button class="adp">Add post</button>
+    </div>
+    <div class="feed" id="posts">
+        <template id="tag-template">
+            <span class="tag"></span>
+        </template>
+        <template id="post-template">
+            <div class="post">
+                <div class="phead">
+                    <img class="pimg"
+                         src="https://sun2.beltelecom-by-minsk.userapi.com/bwswJDpredk4f9FeKYR7KqzlNUi85VNdukOmPw/9dr8NudVcYc.jpg"
+                         alt="Profile pic" height="46">
+                    <span class="uname pname-m pname-al" data-target="author"></span>
+                    <span class="date" data-target="createdAt"></span>
+                    <div class="display-f tags" data-target="hashTags"></div>
+                </div><br>
+                <article class="text" data-target="description"></article>
+                <div class="bot">
+                    <button class="like">
+                        <i class="far fa-heart"></i>
+                        <b class="like" data-target="likes"></b>
+                    </button>
+                </div>
+            </div>
+        </template>
+        <button id="load">Load 10 more</button>
+    </div>
+</div>
+<footer>Glitter | By Yury Shagun | 2 курс 5 группа | yushagun@gmail.com | 24.02.2020</footer>
+</body>
+</html>
