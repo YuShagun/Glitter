@@ -198,8 +198,8 @@ function editItem(id, post) {
 window.editItem = editItem;
 
 function toggleLike(id) {
-    if(window.posts.toggleLike('17', window.user_name))
-        window.page_view.toggleLike('17', window.posts.get('17')['likes'].length);
+    if(window.posts.toggleLike(id, window.user_name))
+        window.page_view.toggleLike(id, window.posts.get(id)['likes'].length);
 }
 
 window.toggleLike = toggleLike;
