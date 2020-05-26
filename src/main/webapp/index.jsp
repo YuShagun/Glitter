@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html lang="en">
+<head>
+  <title>Glitter</title>
+  <style><%@include file="resources/css/styles.css"%></style>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/94b389b029.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+  <span id="logo">GLITTER</span>
+  <button class="signin">Sign out</button>
+  <span id="myname">My name</span>
+  <img class="uimg float-r"
+       src="https://sun2.beltelecom-by-minsk.userapi.com/tdox4ja3dZ6yy7jiqYAyHKSxersAIPECgDxLdA/_159FeFEhBs.jpg"
+       alt="Your image">
+</header>
+<div class="display-f" id="main">
+  <form class="filter" id="fl">
+    <fieldset class="input">
+      <legend class="elname">Filter posts</legend>
+      <label for="author">Author</label><br>
+      <input type="text" id="author" name="author"><br>
+      <label for="date">Date</label><br>
+      <input type="date" id="date" name="author"><br>
+      <label for="tf">Tags</label><br>
+      <div class="display-f tags">
+        <span class="tag">tag1</span>
+        <span class="tag">joke</span>
+        <span class="tag">looooong tag</span>
+        <span class="tag">some</span>
+        <span class="tag">tags</span>
+        <span class="tag">to make</span>
+        <span class="tag">many</span>
+        <span class="tag">lines</span>
+        <span class="tag">and</span>
+        <span class="tag">more</span>
+      </div>
+      <button id="add">Add tag</button>
+      <input type="text" id="tf">
+      <button class="display-b" id="apply">Apply</button>
+    </fieldset>
+  </form>
+  <div class="feed">
+    <div class="post">
+      <div class="phead">
+        <img class="pimg"
+             src="https://sun2.beltelecom-by-minsk.userapi.com/bwswJDpredk4f9FeKYR7KqzlNUi85VNdukOmPw/9dr8NudVcYc.jpg"
+             alt="Profile pic" height="46">
+        <span class="uname pname-m pname-al">User_1</span>
+        <span class="date">19.01.2020 13:24</span>
+        <div class="display-f tags">
+          <span class="tag">tag1</span>
+          <span class="tag">joke</span>
+          <span class="tag">looooong tag</span>
+          <span class="tag">some</span>
+          <span class="tag">tags</span>
+          <span class="tag">to make</span>
+          <span class="tag">many</span>
+          <span class="tag">lines</span>
+          <span class="tag">and</span>
+          <span class="tag">more</span>
+        </div>
+      </div><br>
+      <article class="text">
+        Микрочип, производимый на некотором заводе, имеет форму плоского квадрата со стороной a микрометров.
+        На нижнюю грань выведены контакты, причем координаты этих контактов в системе координат, в которой
+        оси параллельны сторонам чипа, а единичный отрезок имеет длину 1 мкм, являются целыми числами. Для
+        успешной распайки необходимо от каждого контакта протянуть проводящую дорожку к одной из сторон чипа
+        для последующего закрепления на ноге интегральной схемы.
+      </article>
+      <div class="bot">
+        <button class="like">
+          <i class="far fa-heart"></i>
+          <b class="like">0</b>
+        </button>
+        <button class="del">Delete</button>
+        <button class="edit">Edit</button>
+      </div>
+    </div>
+    <div class="post">
+      <div class="phead">
+        <img class="pimg"
+             src="https://dazedimg-dazedgroup.netdna-ssl.com/747/azure/dazed-prod/1260/7/1267894.jpg"
+             alt="Profile pic" height="46">
+        <span class="uname pname-m pname-al">Task</span>
+        <span class="date">22.01.2020 11:02</span>
+      </div><br>
+      <article class="text">
+        Однако используемый технологический процесс позволяет создавать только прямые дорожки, идущие от
+        контакта к краю чипа без изгибов и параллельные сторонам кристалла, причем невозможно проложить одну
+        дорожку под или над другой. Поэтому Вам необходимо определить, в какую сторону выводить каждый из
+        контактов, чтобы полученные дорожки не пересекались, а суммарная их длина была минимальной.
+      </article>
+      <img class="att" src="https://sun1.beltelecom-by-minsk.userapi.com/Uv7oJSk0ePo7QMQQZgWN1al2w0hF9FqcL5d11Q/MSdYzJobMBk.jpg" alt="Image">
+      <div class="bot">
+        <button class="like"><i class="fas fa-heart"></i> <b class="like">10</b></button>
+        <button class="del">Delete</button>
+        <button class="edit">Edit</button>
+      </div>
+    </div>
+    <div class="post">
+      <div class="phead">
+        <img class="pimg"
+             src="https://sun2.beltelecom-by-minsk.userapi.com/bwswJDpredk4f9FeKYR7KqzlNUi85VNdukOmPw/9dr8NudVcYc.jpg"
+             alt="Profile pic" height="46">
+        <span class="uname pname-m pname-al">User_1</span>
+        <span class="date">19.01.2020 13:24</span>
+      </div><br>
+      <article class="text">
+        В первой строке находится натуральное число a — длина стороны микрочипа в микрометрах (1 ≤ a ≤ 30).
+        Во второй строке находится число n контактов на нижней стороне чипа (1 ≤ n ≤ 38). В последующих n
+        строках следуют пары целых чисел в диапазоне от 1 до a − 1 — соответственно абсциссы и ординаты контактов во введённой системе координат.
+      </article>
+      <div class="bot">
+        <button class="like"><i class="far fa-heart"></i> <b class="like">2</b></button>
+        <button class="del">Delete</button>
+        <button class="edit">Edit</button>
+      </div>
+    </div>
+    <div class="post">
+      <div class="phead">
+        <img class="pimg"
+             src="https://dazedimg-dazedgroup.netdna-ssl.com/747/azure/dazed-prod/1260/7/1267894.jpg"
+             alt="Profile pic" height="46">
+        <span class="uname pname-m pname-al">Task</span>
+        <span class="date">22.01.2020 11:02</span>
+      </div><br>
+      <article class="text">
+        Выведите в первой строке число минимальную суммарную длину необходимых дорожек. В последующий строках
+        поясните, в какую сторону выводить дорожку для каждого из контактов: в (i + 1)-й строке выведите одно
+        из слов UP (англ. «вверх»), DOWN (англ. «вниз»), LEFT (англ. «налево»), RIGHT (англ. «направо») — направление
+        выведения дорожки i-го контакта. В случае неоднозначного ответа выводите любой, обеспечивающий минимальную суммарную длину дорожек.
+      </article>
+      <img class="att" src="https://sun1.beltelecom-by-minsk.userapi.com/Uv7oJSk0ePo7QMQQZgWN1al2w0hF9FqcL5d11Q/MSdYzJobMBk.jpg" alt="Image">
+      <div class="bot">
+        <button class="like"><i class="fas fa-heart"></i> <b class="like">10</b></button>
+        <button class="del">Delete</button>
+        <button class="edit">Edit</button>
+      </div>
+    </div>
+    <div class="post">
+      <div class="phead">
+        <img class="pimg"
+             src="https://sun2.beltelecom-by-minsk.userapi.com/bwswJDpredk4f9FeKYR7KqzlNUi85VNdukOmPw/9dr8NudVcYc.jpg"
+             alt="Profile pic" height="46">
+        <span class="uname pname-m pname-al">User_1</span>
+        <span class="date">19.01.2020 13:24</span>
+      </div><br>
+      <article class="text">
+        Вам, конечно же, известно, что в сложных карточных играх (таких, например, как преферанс) вероятность
+        выигрыша зависит не только от умений и навыков игрока, но и от выпавшего расклада карт.<br>
+        Карточная игра, в которой участвует n игроков, состоит из нескольких туров, в каждом туре карты
+        сдаются по-новому. Сила руки i-го игрока (1 ≤ i ≤ n) в отдельном туре равна значению непрерывной
+        случайной величины, равномерно распределённой на интервале [ai, bi].
+      </article>
+      <div class="bot">
+        <button class="like"><i class="far fa-heart"></i> <b class="like">2</b></button>
+        <button class="del">Delete</button>
+        <button class="edit">Edit</button>
+      </div>
+    </div>
+    <div class="post">
+      <div class="phead">
+        <img class="pimg"
+             src="https://dazedimg-dazedgroup.netdna-ssl.com/747/azure/dazed-prod/1260/7/1267894.jpg"
+             alt="Profile pic" height="46">
+        <span class="uname pname-m pname-al">Task</span>
+        <span class="date">22.01.2020 11:02</span>
+      </div><br>
+      <article class="text">
+        Тур выигрывает игрок, у
+        которого сила руки, определённая описанным случайным образом, будет наибольшей. Если наибольшая сила
+        окажется у нескольких игроков, в туре фиксируется ничья.<br>
+        Определите вероятность победы в туре для каждого игрока.
+      </article>
+      <img class="att" src="https://sun1.beltelecom-by-minsk.userapi.com/Uv7oJSk0ePo7QMQQZgWN1al2w0hF9FqcL5d11Q/MSdYzJobMBk.jpg" alt="Image">
+      <div class="bot">
+        <button class="like"><i class="fas fa-heart"></i> <b class="like">10</b></button>
+        <button class="del">Delete</button>
+        <button class="edit">Edit</button>
+      </div>
+    </div>
+    <div class="post">
+      <div class="phead">
+        <img class="pimg"
+             src="https://sun2.beltelecom-by-minsk.userapi.com/bwswJDpredk4f9FeKYR7KqzlNUi85VNdukOmPw/9dr8NudVcYc.jpg"
+             alt="Profile pic" height="46">
+        <span class="uname pname-m pname-al">User_1</span>
+        <span class="date">19.01.2020 13:24</span>
+      </div><br>
+      <article class="text">
+        Первая строка содержит целое число n (2 ≤ n ≤ 300). Каждая из последующих n строк содержит два целых
+        числа ai и bi (0 ≤ ai < bi ≤ 1 000 000 000) — границы интервала для силы руки каждого игрока.
+      </article>
+      <div class="bot">
+        <button class="like"><i class="far fa-heart"></i> <b class="like">2</b></button>
+        <button class="del">Delete</button>
+        <button class="edit">Edit</button>
+      </div>
+    </div>
+    <div class="post">
+      <div class="phead">
+        <img class="pimg"
+             src="https://dazedimg-dazedgroup.netdna-ssl.com/747/azure/dazed-prod/1260/7/1267894.jpg"
+             alt="Profile pic" height="46">
+        <span class="uname pname-m pname-al">Task</span>
+        <span class="date">22.01.2020 11:02</span>
+      </div><br>
+      <article class="text">
+        Выведите n строк, i-я из которых содержит одно действительное число — вероятность победы в туре i-го
+        игрока. Абсолютная погрешность не должна превосходить 10−9.
+      </article>
+      <img class="att" src="https://sun1.beltelecom-by-minsk.userapi.com/Uv7oJSk0ePo7QMQQZgWN1al2w0hF9FqcL5d11Q/MSdYzJobMBk.jpg" alt="Image">
+      <div class="bot">
+        <button class="like"><i class="fas fa-heart"></i> <b class="like">10</b></button>
+        <button class="del">Delete</button>
+        <button class="edit">Edit</button>
+      </div>
+    </div>
+    <div class="post">
+      <div class="phead">
+        <img class="pimg"
+             src="https://sun2.beltelecom-by-minsk.userapi.com/bwswJDpredk4f9FeKYR7KqzlNUi85VNdukOmPw/9dr8NudVcYc.jpg"
+             alt="Profile pic" height="46">
+        <span class="uname pname-m pname-al">User_1</span>
+        <span class="date">19.01.2020 13:24</span>
+      </div><br>
+      <article class="text">
+        Sample text
+      </article>
+      <div class="bot">
+        <button class="like"><i class="far fa-heart"></i> <b class="like">2</b></button>
+        <button class="del">Delete</button>
+        <button class="edit">Edit</button>
+      </div>
+    </div>
+    <div class="post">
+      <div class="phead">
+        <img class="pimg"
+             src="https://dazedimg-dazedgroup.netdna-ssl.com/747/azure/dazed-prod/1260/7/1267894.jpg"
+             alt="Profile pic" height="46">
+        <span class="uname pname-m pname-al">Task</span>
+        <span class="date">22.01.2020 11:02</span>
+      </div><br>
+      <article class="text">
+      </article>
+      <img class="att" src="https://sun1.beltelecom-by-minsk.userapi.com/Uv7oJSk0ePo7QMQQZgWN1al2w0hF9FqcL5d11Q/MSdYzJobMBk.jpg" alt="Image">
+      <div class="bot">
+        <button class="like"><i class="fas fa-heart"></i> <b class="like">10</b></button>
+        <button class="del">Delete</button>
+        <button class="edit">Edit</button>
+      </div>
+    </div>
+    <button id="load">Load 10 more</button>
+  </div>
+  <div class="rcol">
+    <div class="uinf">
+      <div class="display-f uinf-al">
+        <img class="uimg"
+             src="https://sun2.beltelecom-by-minsk.userapi.com/tdox4ja3dZ6yy7jiqYAyHKSxersAIPECgDxLdA/_159FeFEhBs.jpg"
+             alt="Your image">
+        <div class="uinf-m uname">My name</div>
+      </div>
+      Some information about me:
+      <p>Yevgeny Nikolayevich Ponasenkov (Russian: Евгений Николаевич Понасенков; born March 13, 1982, Moscow, Russia)
+        is a Russian self-proclaimed historian, political writer, journalist, theater director, television host, actor and singer.
+        I was a member of the public organization Russian Academy of Sciences and Arts (fringe organization, liquidated in 2018;
+        not to be confused with the Russian Academy of Sciences). I am the author of works on the Napoleonic Wars (especially book
+        The first scientific history of the War of 1812)</p>
+    </div>
+    <button class="adp">Add post</button>
+  </div>
+</div>
+<footer>Glitter | By Yury Shagun | 2 курс 5 группа | yushagun@gmail.com | 24.02.2020</footer>
+</body>
+</html>
