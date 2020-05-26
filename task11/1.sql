@@ -1,0 +1,3 @@
+SELECT *
+FROM twitterdb.post
+ORDER BY CREATED_AT DESC
