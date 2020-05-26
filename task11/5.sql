@@ -1,0 +1,7 @@
+SELECT tbl.CNT, tbl.NAME
+FROM (SELECT COUNT(post.POST_ID)as CNT, user.NAME 
+FROM user
+INNER JOIN post
+ON user.USER_ID=post.USER_ID
+GROUP BY post.USER_ID) as tbl
+WHERE tbl.CNT > 2
