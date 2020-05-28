@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="сontroller/loginController.js"></script>
+</head>
+<body>
+<header>
+    <span id="logo">GLITTER</span>
+    <img class="uimg float-r"
+         src="https://sun2.beltelecom-by-minsk.userapi.com/tdox4ja3dZ6yy7jiqYAyHKSxersAIPECgDxLdA/_159FeFEhBs.jpg"
+         alt="Your image">
+</header>
+    <div class="page-name">Authorization form</div>
+    <form id="auth" name="login" onsubmit="loginController.logIn(); return false;">
+        <fieldset class="fit-cont input">
+            <label for="login" class="display-b login">Login</label>
+            <input type="text" id="login" class="display-b rounded-box" name="login">
+            <label for="password" class="display-b login">Password</label>
+            <input type="password" id="password" class="display-b rounded-box" name="password">
+            <button type="submit" class="align-btn">Log in</button>
+        </fieldset>
+    </form>
+<footer class="foot">Glitter | By Yury Shagun | 2 курс 5 группа | yushagun@gmail.com | 24.02.2020</footer>
+</body>
+</html>

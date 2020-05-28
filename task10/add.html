@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title data-target="type"></title>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/94b389b029.js" crossorigin="anonymous"></script>
+    <script type="module" src="сontroller/addController.js"></script>
+</head>
+<body>
+<header>
+    <span id="logo">GLITTER</span>
+    <img class="uimg float-r"
+         src="https://sun2.beltelecom-by-minsk.userapi.com/tdox4ja3dZ6yy7jiqYAyHKSxersAIPECgDxLdA/_159FeFEhBs.jpg"
+         alt="Your image">
+</header>
+<div class="page-name" data-target="type"></div>
+<form id="auth" name="login" onsubmit="addController.submitPost(); return false;">
+    <fieldset class="input">
+        <div data-target="author"></div>
+        <div class="date" data-target="date"></div>
+        <textarea maxlength="280" id="text" class="display-b rounded-box" data-target="description"></textarea>
+        <label for="tf">Tags</label><br>
+        <div class="display-f tags" data-target="hashTags" onclick="addController.delTag(event)">
+            <template id="filter-tag-template">
+                <span class="tag"></span>
+            </template>
+        </div>
+        <button type="button" id="add" onclick="addController.addTag()">Add tag</button>
+        <input type="text" maxlength="20" name="tag" id="tf"><br>
+        <label for="pl">Photo link</label>
+        <input type="text" id="pl" data-target="photoLink">
+        <button type="submit" class="display-b align-btn">Submit</button>
+    </fieldset>
+</form>
+<footer class="foot">Glitter | By Yury Shagun | 2 курс 5 группа | yushagun@gmail.com | 24.02.2020</footer>
+</body>
+</html>
